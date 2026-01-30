@@ -1,0 +1,69 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Create Release
+        shell: bash
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/v}
+          echo "Creating release for version: $VERSION"
+
+          # Create release notes
+          cat > release_notes.md <<EOF
+          ## AutoUpdaterWin v$VERSION
+
+          Windows CMD/Batch Auto-Update System for GitHub-hosted Scripts.
+
+          ### Components
+
+          - **Bootstrap Minimal**: Embed ~40 lines for auto-updates
+          - **Update Engine**: Core update logic with self-replace
+          - **PowerShell Helpers**: JSON parsing and token preservation
+          - **Migration Tool**: Migrate scripts to GitHub repos
+          - **Examples**: Complete usage examples
+          - **Documentation**: Comprehensive guides
+
+          ### Installation
+
+          See [QUICKSTART.md](https://github.com/7onnie/AutoUpdaterWin/blob/main/QUICKSTART.md) for quick setup.
+
+          ### Documentation
+
+          - [README.md](https://github.com/7onnie/AutoUpdaterWin/blob/main/README.md) - Overview
+          - [SETUP.md](https://github.com/7onnie/AutoUpdaterWin/blob/main/docs/SETUP.md) - Setup guide
+          - [MODES.md](https://github.com/7onnie/AutoUpdaterWin/blob/main/docs/MODES.md) - Update modes
+          - [WINDOWS_SPECIFICS.md](https://github.com/7onnie/AutoUpdaterWin/blob/main/docs/WINDOWS_SPECIFICS.md) - Implementation details
+
+          ### Related
+
+          - [AutoUpdater](https://github.com/7onnie/AutoUpdater) - Bash version for Linux/macOS
+
+          ---
+
+          🤖 Auto-generated release
+          EOF
+
+          # Create release
+          gh release create "v$VERSION" \
+            --title "AutoUpdaterWin v$VERSION" \
+            --notes-file release_notes.md \
+            --latest
+
+          echo "✅ Release v$VERSION created successfully"
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
