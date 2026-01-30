@@ -1,0 +1,29 @@
+# AutoUpdaterWin - Git Ignore
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Cache directories
+cache/
+.cache/
+
+# Test outputs
+test_output/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
+
+# macOS
+.DS_Store

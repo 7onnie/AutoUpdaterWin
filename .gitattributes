@@ -1,0 +1,16 @@
+# AutoUpdaterWin - Git Attributes
+# Windows scripts require CRLF line endings
+
+# Windows batch files
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# PowerShell scripts
+*.ps1 text eol=crlf
+
+# Documentation
+*.md text eol=lf
+*.txt text eol=lf
+
+# Shell scripts (for Mac migration tool)
+*.sh text eol=lf
