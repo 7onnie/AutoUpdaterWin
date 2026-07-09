@@ -1,6 +1,17 @@
-# AutoUpdaterWin
+<h1 align="center">AutoUpdaterWin</h1>
 
-**Windows CMD/Batch Auto-Update System for GitHub-hosted Scripts**
+<p align="center">
+  Windows CMD/Batch auto-update system for GitHub-hosted scripts.
+</p>
+
+<!-- BADGES:START -->
+<p align="center">
+  <a href="https://github.com/7onnie/AutoUpdaterWin/actions/workflows/release.yml"><img alt="CI" src="https://github.com/7onnie/AutoUpdaterWin/actions/workflows/release.yml/badge.svg"></a>
+  <a href="https://github.com/7onnie/AutoUpdaterWin/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/7onnie/AutoUpdaterWin?sort=semver"></a>
+  <a href="LICENSE"><img alt="License" src="https://img.shields.io/github/license/7onnie/AutoUpdaterWin"></a>
+  <a href="https://buymeacoffee.com/7onnie"><img alt="Buy me a coffee" src="https://img.shields.io/badge/Buy%20me%20a%20coffee-FFDD00?logo=buymeacoffee&logoColor=black"></a>
+</p>
+<!-- BADGES:END -->
 
 AutoUpdaterWin enables Windows batch scripts to automatically update themselves from GitHub releases, similar to [AutoUpdater](https://github.com/7onnie/AutoUpdater) for Bash scripts.
 
